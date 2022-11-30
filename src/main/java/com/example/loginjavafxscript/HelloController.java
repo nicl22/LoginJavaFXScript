@@ -3,6 +3,7 @@ package com.example.loginjavafxscript;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,9 +25,11 @@ public class HelloController {
     @FXML
     private Button loginButton;
 
+    private Stage stage;
+
     String usernameText, passwordText;
 
-    public void onHelloButtonClick(ActionEvent event) {
+    public void onHelloButtonClick(ActionEvent event) throws IOException {
         User user = new User();
         usernameText =username.getText();
         passwordText = password.getText();
@@ -37,8 +40,11 @@ public class HelloController {
         if (usernameText.equals(user.getUsername())) {
                 if (passwordText.equals(user.getPassword())) {
                     welcomeText.setText("Logged in");
-                    loggedIn=true;
-                    newScene(Stage stage);
+                    FXMLLoader fxmlLoader2 = new FXMLLoader(HelloController.class.getResource("quiz.fxml"));
+                    Scene scene = new Scene(fxmlLoader2.load(), 620, 240);
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setScene(scene);
+
 
                 } else {
                     welcomeText.setText("Incorrect username/password");
@@ -56,9 +62,9 @@ public class HelloController {
     }
 
 
-    public void newScene(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("quiz.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+    public void newScene() throws IOException {
+        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloController.class.getResource("quiz.fxml"));
+        Scene scene = new Scene(fxmlLoader2.load(), 320, 240);
         stage.setTitle("Hello!");
 
         stage.setScene(scene);

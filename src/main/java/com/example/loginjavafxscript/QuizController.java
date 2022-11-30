@@ -4,17 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 
-import java.awt.*;
 
 public class QuizController {
-    @FXML
-    Label answerText;
+
     @FXML
     private TextField answer;
 
     @FXML
     private Button answerBtn;
+
+    @FXML
+    private Label answerVerification;
 
     private String answerInput;
 
@@ -24,7 +26,9 @@ public class QuizController {
 
         if (answerInput.equals("2022")){
 
-            answerText.setText("Incorrect username/password");
+            answerVerification.setText("correct answer!");
+        }else {
+            answerVerification.setText("Incorrect answer!");
         }
 
     }

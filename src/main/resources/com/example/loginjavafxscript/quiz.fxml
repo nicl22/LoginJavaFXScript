@@ -2,13 +2,21 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.loginjavafxscript.QuizController">
-   <children>
-      <TextArea layoutX="119.0" layoutY="36.0" prefHeight="40.0" prefWidth="386.0" text="What year is it?" />
-      <TextField fx:id="answer" layoutX="119.0" layoutY="169.0" prefHeight="30.0" prefWidth="386.0" promptText="enter answer" />
-      <Label fx:id="answerText" />
-      <Button fx:id="answerBtn" layoutX="258.0" layoutY="288.0" onAction="#onAnswerBtnClick" mnemonicParsing="false" prefHeight="46.0" prefWidth="84.0" text="ENTER"  />
+<VBox prefHeight="369.0" prefWidth="174.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.loginjavafxscript.QuizController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 
-   </children>
-</AnchorPane>
+
+   <TextArea id="answerText" layoutX="27.0" layoutY="47.0" prefHeight="30.0" prefWidth="147.0" text="What year is it?" />
+      <TextField fx:id="answer" layoutX="31.0" layoutY="138.0" prefHeight="46.0" prefWidth="139.0" promptText="enter answer" />
+      <Button fx:id="answerBtn" layoutX="45.0" layoutY="245.0" mnemonicParsing="false" onAction="#onAnswerBtnClick" prefHeight="46.0" prefWidth="84.0" text="ENTER" />
+
+
+   <Label fx:id="answerVerification" />
+
+
+
+</VBox>
