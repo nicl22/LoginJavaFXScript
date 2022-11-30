@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.loginjavafxscript.QuizController">
+   <children>
+      <TextArea layoutX="119.0" layoutY="36.0" prefHeight="40.0" prefWidth="386.0" text="What year is it?" />
+      <TextField fx:id="answer" layoutX="119.0" layoutY="169.0" prefHeight="30.0" prefWidth="386.0" promptText="enter answer" />
+      <Label fx:id="answerText" />
+      <Button fx:id="answerBtn" layoutX="258.0" layoutY="288.0" onAction="#onAnswerBtnClick" mnemonicParsing="false" prefHeight="46.0" prefWidth="84.0" text="ENTER"  />
+
+   </children>
+</AnchorPane>
